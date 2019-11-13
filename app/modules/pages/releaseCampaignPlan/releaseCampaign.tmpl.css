@@ -1,0 +1,199 @@
+html{
+  background-color: #ffffff;
+}
+body{
+	width: 100%;
+	background: #f2f2f2;
+  background-color: #ffffff;
+	font-family: Source Sans Pro;
+	color: #707070;
+	padding-bottom: 10px;
+	/* overflow-x: scroll; */
+}
+
+.containerTable {
+  width: 100%;
+  height: 500px;
+  /* border: 2px solid #444444; */
+  overflow: scroll;
+  position: relative;
+}
+
+
+.containerTable {}
+
+.containerTable table thead tr th {
+  background:#8e1921;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal !important;
+}
+
+.containerTable table tbody {
+
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.containerTable table tfoot {
+  /* background: #d9534f;
+  color: white; */
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.containerTable table thead,
+.containerTable table tbody tr {
+  /* border: 1px solid black; */
+  /* border-collapse: separate; */
+  /* border-spacing: 4px;   */
+  table-layout: fixed;
+}
+
+.containerTable table thead,
+.containerTable table tfoot tr {
+  /* background: #d9534f;
+  color: white; */
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.containerTable table tbody tr td {
+  text-align: center;
+}
+
+
+.containerTable table tfoot tr td {
+  background: #d9534f;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  width: 140px;
+}
+
+.containerTable table thead tr th:nth-child(2) {
+  text-align: center;
+}
+
+.containerTable table tbody tr td:nth-child(2) {
+  text-align: center;
+}
+
+.containerTable table tfoot tr td:nth-child(2) {
+  text-align: center;
+}
+
+
+th{
+  	background: #808080;
+    text-align: center;
+  	color: #fff;
+}
+.notify{
+	margin-top: 15px;
+}
+
+.proposal-panel{
+	margin-top: 70px;
+}
+
+.labels{
+	margin-left: 55px;
+}
+
+.center-heading{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.society-heading{
+	margin-top: 14px;
+	margin-left: -9px;
+}
+
+.update-button{
+	margin-top: 20px;
+	margin-left: 82px;
+}
+
+.center-details{
+	margin-left: 0px;
+}
+
+.proposal-details{
+	margin-left: 10px;
+}
+.table-scroll {
+  height:250px;
+  overflow-x:scroll;
+  margin-top:0px;
+  margin-left: 10px;
+  /*z-index: 3;*/
+}
+.alignment {
+  text-align: center;
+ }
+ .error{
+	 color: #c9302c;
+ }
+ .table-style{
+	 overflow-y: auto;
+   /* font-size: 12px; */
+ }
+
+ .table-suppliers td,
+ .table-suppliers th {
+		min-width: 170px;
+		text-align: center;
+ }
+
+  .table-suppliers th {
+		white-space: nowrap;
+	}
+
+	.panel-body {
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.table-suppliers tr > th:first-child,
+		.table-suppliers tr > td:first-child {
+			display: none;
+		}
+	}
+
+.input-width{
+	min-width: 120px !important;
+}
+.input-width-phase{
+	min-width: 60px !important;
+}
+.table-suppliers th {
+  background-color: #8e1921;
+  color: white;
+}
+
+.calendar-table th {
+  background: transparent;
+  color: black;
+}
+
+    .st-sort-default:before {content: '\25B1'}
+    .st-sort-ascent:before {content: '\25B2'}
+    .st-sort-descent:before {content: '\25BC'}
+
+.completedHeaderSpacing{
+  width: 150px;
+}
+
+.comment {
+  word-break: break-all;
+}

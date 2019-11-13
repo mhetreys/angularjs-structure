@@ -1,0 +1,77 @@
+.leadsdetailtable {}
+
+.leadsdetailtable table thead tr th {
+  background: #d9534f;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
+  white-space: normal !important;
+}
+
+.leadsdetailtable table tbody {
+
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.leadsdetailtable table tfoot {
+  /* background: #d9534f;
+  color: white; */
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.leadsdetailtable table thead,
+.leadsdetailtable table tbody tr {
+  /* border: 1px solid black; */
+  /* border-collapse: separate; */
+  /* border-spacing: 4px;   */
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+.leadsdetailtable table thead,
+.leadsdetailtable table tfoot tr {
+  /* background: #d9534f;
+  color: white; */
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.leadsdetailtable table tbody tr td {
+
+  text-align: center;
+  width: 100px;
+}
+
+
+.leadsdetailtable table tfoot tr td {
+  background: #d9534f;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  width: 100px;
+}
+
+.leadsdetailtable table thead tr th:nth-child(2) {
+  text-align: left;
+}
+
+.leadsdetailtable table tbody tr td:nth-child(2) {
+  text-align: left;
+}
+
+.leadsdetailtable table tfoot tr td:nth-child(2) {
+  text-align: left;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="ng-cloak" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <link href="css/preloader.css" rel="stylesheet" media="screen">
+    <link href="css/blur_admin_theme.css" rel="stylesheet" media="screen">
+    <link href="css/buttons.css" rel="stylesheet" media="screen">
+    <link href="css/datepicker.css" rel="stylesheet" media="screen">
+    <link href="css/icons.css" rel="stylesheet" media="screen">
+    <link href="css/layout.css" rel="stylesheet" media="screen">
+    <link href="css/socicon.css" rel="stylesheet" media="screen">
+    <link href="css/table.css" rel="stylesheet" media="screen">
+    <link href="css/pageTop.css" rel="stylesheet" media="screen">
+    <link href="css/backTop.css" rel="stylesheet" media="screen">
+    <link href="css/baWizard.css" rel="stylesheet" media="screen">
+    <link href="css/contentTop.css" rel="stylesheet" media="screen">
+    <link href="css/msgCenter.css" rel="stylesheet" media="screen">
+    <link href="css/progressRound.css" rel="stylesheet" media="screen">
+    <link href="css/sidebar.css" rel="stylesheet" media="screen">
+    <link href="css/widgets.css" rel="stylesheet" media="screen">
+    <link href="css/panel.css" rel="stylesheet">
+    <link href="css/tabs.css" rel="stylesheet" media="screen">
+    <link href="css/accordion.css" rel="stylesheet" media="screen">
+    <link href="css/dashboard-theme.css" rel="stylesheet" media="screen">
+    <link href="css/sass-app.css" rel="stylesheet" media="screen">
+    <link href="css/sass-app-map.css" rel="stylesheet" media="screen">
+    <link href="css/sidePanel.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="modules/common/loadingicon/loading-spinner.tmpl.css"/>
+    <link rel="stylesheet" type="text/css" href="modules/pages/dashboard/chat.css">
+<!-- <script data-require="jquery@*" data-semver="2.1.4" src="https://code.jquery.com/jquery-2.1.4.js"></script> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+    <link rel="stylesheet" type="text/css" href="modules/pages/DashBoard/adminDashboard/percentage-circular-bar.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/smallscreen.css" rel="stylesheet" media="screen">
+  </head>
+  <body ng-cloak>
+
+    <div class="body-bg"></div>
+
+    <!-- <div ng-loading="loading"></div>  -->
+    <div ng-show="isEmpty" style="text-align:center;"><h2>{{msg}}</h2></div>
+<!-- ng-if="loading"  -->
+    <main ng-show="!isEmpty" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }" >
+    <ba-sidebar></ba-sidebar>
+
+    <page-Top></page-Top>
+
+    <div class="al-main" >
+        <div class="al-content">
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

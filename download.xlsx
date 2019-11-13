@@ -1,0 +1,87 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>WireWorkbenchDataExport</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>
+        <thead>
+            <tr>
+              <th style="background:#8e1921 !important;color:#ffffff !important">Details</th>
+              <th style="background:#8e1921 !important;color:#ffffff !important">Overall</th>
+              <!-- ngRepeat: data in campaignOverallSummary --><th ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">BYJU's Mumbai - Thane To Kalyan</th><!-- end ngRepeat: data in campaignOverallSummary --><th ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">BYJU's Mumbai - Borivali to Virar</th><!-- end ngRepeat: data in campaignOverallSummary -->
+              <!-- <th style="background:#8e1921 !important;color:#ffffff !important">Last Week</th>
+              <th style="background:#8e1921 !important;color:#ffffff !important">Last 2 Weeks</th>
+              <th style="background:#8e1921 !important;color:#ffffff !important">Last 3 Weeks</th> -->
+              </tr>
+      </thead>
+        <tbody style="text-align:center;">
+          <tr>
+          <td><small style="font-weight:bold">Flat Count</small></td>
+          <td class="ng-binding">110285</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">73492</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">36793</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{WeeklyVendorMISLastWeekSummary.flat_count || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast2WeekSummary.flat_count || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast3WeekSummary.flat_count || 'NA'}}</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Total Leads</small></td>
+          <td class="ng-binding">14266</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">8572</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">5694</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{WeeklyVendorMISLastWeekSummary.total || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast2WeekSummary.total || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast3WeekSummary.total || 'NA'}}</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Hot Leads</small></td>
+          <td class="ng-binding">11520</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">6961</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">4559</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{WeeklyVendorMISLastWeekSummary.interested || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast2WeekSummary.interested || 'NA'}}</td>
+          <td>{{WeeklyVendorMISLast3WeekSummary.interested || 'NA'}}</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Cost Per Leads <br> (Leads %)</small></td>
+          <td class="ng-binding">1045.46 <br> (13.57) %</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">1194.37<br>(11.66)</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">896.56<br>(15.48)</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>({{(WeeklyVendorMISLastWeekSummary.total / WeeklyVendorMISLastWeekSummary.flat_count)  * 100 | limitTo:5}}) %</td>
+          <td>({{(WeeklyVendorMISLast2WeekSummary.total / WeeklyVendorMISLast2WeekSummary.flat_count)  * 100 | limitTo:5}}) %</td>
+          <td>({{(WeeklyVendorMISLast3WeekSummary.total / WeeklyVendorMISLast3WeekSummary.flat_count)  * 100 | limitTo:5}}) %</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Cost Per Hot Leads <br> (Hot Leads %)</small></td>
+          <td class="ng-binding">1295.28 <br> (10.93) %</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">1470.78<br>(9.47)</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">1119.77<br>(12.39)</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{(WeeklyVendorMISLastWeekSummary.interested / WeeklyVendorMISLastWeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast2WeekSummary.interested / WeeklyVendorMISLast2WeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast3WeekSummary.interested / WeeklyVendorMISLast3WeekSummary.flat_count)  * 100 | limitTo:5}} %</td> -->
+          </tr>
+
+          <!-- <tr>
+
+          <td><small style="font-weight:bold">Cost Per Meeting Fixed <br> (Meeting Fixed %)</small></td>
+          <td>{{initalDynamicTableData['cost_flat/hotness_level_2']}} <br> ({{initalDynamicTableData['hot_lead/flat*100'] | limitTo:5}}) %</td>
+          <td>{{(WeeklyVendorMISLastWeekSummary.interested / WeeklyVendorMISLastWeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast2WeekSummary.interested / WeeklyVendorMISLast2WeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast3WeekSummary.interested / WeeklyVendorMISLast3WeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          </tr> -->
+          <tr>
+          <td><small style="font-weight:bold">Cost Per Booking Confirmed <br> (Booking Confirmed %)</small></td>
+          <td class="ng-binding">99147.18 <br> (0.29) %</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">28126.72<br>(0.50)</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">170167.63<br>(0.08)</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{(WeeklyVendorMISLastWeekSummary.interested / WeeklyVendorMISLastWeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast2WeekSummary.interested / WeeklyVendorMISLast2WeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast3WeekSummary.interested / WeeklyVendorMISLast3WeekSummary.flat_count)  * 100 | limitTo:5}} %</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Cost Per Orders Punched <br> (Orders Punched %)</small></td>
+          <td class="ng-binding">221699.86 <br> (0.11) %</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">78754.81<br>(0.18)</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">364644.91<br>(0.04)</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{(WeeklyVendorMISLastWeekSummary.interested / WeeklyVendorMISLastWeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast2WeekSummary.interested / WeeklyVendorMISLast2WeekSummary.flat_count)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast3WeekSummary.interested / WeeklyVendorMISLast3WeekSummary.flat_count)  * 100 | limitTo:5}} %</td> -->
+          </tr>
+          <tr>
+          <td><small style="font-weight:bold">Hot Leads Ratio (%)</small></td>
+          <td class="ng-binding">80.64 %</td>
+          <!-- ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope" style="">81.21 %</td><!-- end ngRepeat: data in campaignOverallSummary --><td ng-repeat="data in campaignOverallSummary" class="ng-binding ng-scope">80.07 %</td><!-- end ngRepeat: data in campaignOverallSummary -->
+          <!-- <td>{{(WeeklyVendorMISLastWeekSummary.interested / WeeklyVendorMISLastWeekSummary.total)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast2WeekSummary.interested / WeeklyVendorMISLast2WeekSummary.total)  * 100 | limitTo:5}} %</td>
+          <td>{{(WeeklyVendorMISLast3WeekSummary.interested / WeeklyVendorMISLast3WeekSummary.total)  * 100 | limitTo:5}} %</td> -->
+          </tr>
+        </tbody>
+      </table></body></html>

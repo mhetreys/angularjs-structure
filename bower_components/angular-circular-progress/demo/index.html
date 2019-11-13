@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="circularProgressDemo">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Circular Progress Demo</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="../dist/circularProgress.js"></script>
+        <script>
+            angular
+                .module('circularProgressDemo', ['angular-circular-progress'])
+                .controller('TimerCtrl', function($timeout) {
+                    var vm = this,
+                        timeout;
+                    vm.value = 0;
+                    vm.max = 60;
+                    vm.animation = "linearEase";
+                    vm.iterations = 60; // Accelerate animation to fit the 1 second timeout function
+                    vm.label = "";
+
+                    vm.start = function() {
+                        vm.label = vm.value + "s";
+                        timeout = $timeout(function() {
+                            vm.value++;
+                            if(vm.value > vm.max) {
+                                vm.value = 0;
+                            }
+                            vm.start();
+                        }, 1000);
+                    };
+
+                    vm.start();
+
+                });
+        </script>
+    </head>
+
+    <body ng-controller="TimerCtrl as timer">
+        <div class="container">
+
+            <h2>Circular Progress Demo</h2>
+            <circular-progress></circular-progress>
+            <circular-progress
+                value="50"
+                max="120"
+                orientation="1"
+                radius="80"
+                stroke="20"
+                base-color="#ffff00"
+                progress-color="#00ff00"
+                iterations="100"
+                animation="easeInOutCubic"
+            ></circular-progress>
+
+
+            <!-- Note that value and max MUST NOT use the {{ }} notation -->
+            <circular-progress
+                value="timer.value"
+                max="timer.max"
+                iterations="{{timer.iterations}}"
+                animation="{{timer.animation}}"
+                label="{{timer.label}}"
+            ></circular-progress>
+
+        </div>
+    </body>
+</html>

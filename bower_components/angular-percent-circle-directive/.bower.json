@@ -1,0 +1,32 @@
+{
+  "name": "angular-percent-circle-directive",
+  "version": "1.1.1",
+  "authors": [
+    "Ryan Rombough <drrombough@gmail.com>"
+  ],
+  "description": "An Angular directive for adding an animated percent circle.",
+  "main": "dist/percent-circle-directive.js",
+  "keywords": [
+    "angular",
+    "directive",
+    "angularjs",
+    "percent",
+    "percentage",
+    "circle",
+    "arch",
+    "animate",
+    "animated",
+    "animation"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ryanrombough/angular-percent-circle-directive",
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.1",
+    "commit": "4c6389f71c71b35de0685ec51ca67b6d33c6e49c"
+  },
+  "_source": "https://github.com/ryanrombough/angular-percent-circle-directive.git",
+  "_target": "^1.1.1",
+  "_originalSource": "angular-percent-circle-directive"
+}

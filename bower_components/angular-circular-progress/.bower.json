@@ -1,0 +1,33 @@
+{
+  "name": "angular-circular-progress",
+  "version": "0.0.2",
+  "authors": [
+    "Pierre Skowron"
+  ],
+  "description": "AngularJS module that creates circular progress bars",
+  "main": "dist/circularProgress.min.js",
+  "keywords": [
+    "angular",
+    "progressbar",
+    "circular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": ">=1.3.0"
+  },
+  "homepage": "https://github.com/TouPye/angular-circular-progress",
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.2",
+    "commit": "be6224d211aa5ea55e83f1fc317322581c5bc704"
+  },
+  "_source": "https://github.com/TouPye/angular-circular-progress.git",
+  "_target": "^0.0.2",
+  "_originalSource": "angular-circular-progress"
+}

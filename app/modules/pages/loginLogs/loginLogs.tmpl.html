@@ -1,0 +1,30 @@
+<div><nav-bar></nav-bar></div>
+</br></br></br>
+
+<div class="panel">
+  <div class="panel-heading">
+    <h3>Login Log Details</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>Name of User</th>
+          <th>Email</th>
+          <th>Organisation</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in loginLogsData">
+          <td>{{user.first_name}} {{user.last_name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.organisation_name}}</td>
+          <td>{{user.login_timestamp|limitTo:10}}</td>
+          <td>{{user.login_timestamp|limitTo:8:11}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

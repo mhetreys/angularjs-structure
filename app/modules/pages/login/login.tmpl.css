@@ -1,0 +1,94 @@
+.container{
+  height: 50px;
+}
+.container1{
+  height:500px;
+  width:1273px;
+  margin-left: 4px;
+  margin-top:5px;
+  background-image:url(img/background.png);
+  background-repeat: no-repeat;
+}
+
+
+.panel-heading{
+height:450px;
+width:330px;
+}
+.submit-btn{
+	background-color: #cd2632;
+  width: 232px;
+  color:#ffffff;
+  height: 36.5px;
+  font-color: #ffffff;
+  border-radius: 8px;
+  margin-left:8px;
+  border-color:transparent;
+  font-weight: bold;
+  font-size: 13px;
+  border-bottom-width: inherit;
+  border-right-width: inherit;
+  border-top-width: inherit;
+  border-left-width: inherit;
+}
+#login-panel{
+  margin-top: 20px;
+  margin:3%;
+  width:330px;
+}
+.quote{
+  color:#ccc;
+  font-style:italic;
+  font-stretch: inherit;
+  font-size:30px;
+  margin-top: 60px;
+}
+.extras{
+  margin-left:22px;
+  font-size:15px;
+  color:#cd2632;
+}
+.myClassNameOne {
+  border-radius: 8px;
+  border-bottom-width: inherit;
+  border-right-width: inherit;
+  border-top-width: inherit;
+  border-left-width: inherit;
+  border-color: #66AFE9;
+  outline: 0px none;
+  font-family: myFirstFont;
+  font-size: 13px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+}
+.errorMessages{
+  margin-bottom: 20px;
+  color: red;
+}
+
+
+
+/* start (min-width :300px) and (max-width :600px) */
+@media only screen and (min-width :300px) and (max-width :600px) {
+.body{
+background-color: #ffffff;
+}
+#login-panel{
+	width:320px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.container1{
+  height:450px;
+  width:320px;
+  background-image:url(img/background.png);
+  background-repeat: no-repeat;
+}
+.quote{
+  color:#ccc;
+  font-style:italic;
+  font-stretch: inherit;
+  font-size:10px;
+  margin-top: 10px;
+}
+}
+/* end (min-width :300px) and (max-width :600px) */

@@ -1,0 +1,46 @@
+#greenColor{
+  background-color: green;
+  color: #fff;
+  width: 60px;
+  height: 35px;
+  cursor: default;
+  border: 1px #000000;
+}
+#yellowColor{
+  background-color: #18d939;
+  color: #fff;
+  width: 60px;
+  height: 35px;
+  cursor: default;
+  border: 1px #000000;
+
+}
+#redColor{
+  background-color: red;
+  color: #fff;
+  width: 60px;
+  height: 35px;
+  cursor: default;
+  border: 1px #000000;
+
+}
+
+#yellow{
+  background-color: #FFC300;
+  color: #fff;
+  width: 60px;
+  height: 35px;
+  cursor: default;
+  border: 1px #000000;
+
+}
+
+#lightGreen{
+  background-color: #68F615;
+  color: #fff;
+  width: 60px;
+  height: 35px;
+  cursor: default;
+  border: 1px #000000;
+
+}

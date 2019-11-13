@@ -1,0 +1,234 @@
+<!-- <link rel="stylesheet" href="modules/common/header/nav-bar.tmpl.css"/> -->
+<link rel="stylesheet" href="modules/common/header/menu-bar-common.css"/>
+<link href="css/smallscreen.css" rel="stylesheet" media="screen">
+
+
+<body id="top">
+<div class="navbar-wrapper2 navbar-fixed-top" style="height: 65px;">
+  <div class="container" style="margin-top:10px">
+    <a class="navbar-brand aligntop"><img src="images/logo.png" alt="Machadalo" class="logo"/></a>
+    <div class="navbar pull-right">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown active">
+        <div style="margin-left:25px;margin-top:12px;font-size:20px;color:#8e1921;">
+          <span class="glyphicon glyphicon-menu-hamburger" ng-click="visible=!visible;">Menu</span>
+        </div>
+      </li>
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+</body>
+
+              <div ng-class="{'is-visible':visible}" class="menu">
+                <div class="menu-list">
+                  <ul id="menu-content">
+                            <li ng-class="{active: isActive('/manageCampaign/create')}" permission = "[perm.menuHome]">
+                              <a ng-href="/#/manageCampaign/create" class="lipadding" ng-click="closeModal()">
+                                <i class="fa fa-tasks fa-lg"></i> Home</a>
+                            </li>
+
+                          <li ng-class="{active: isActive('/dashboard')}" permission = "[perm.menuDashboard]">
+                            <a ng-href="/#/dashboard" class=" lipadding" ng-click="closeModal()">
+                            <i class="fa fa-dashboard fa-lg"></i>DashBoard</a>
+                          </li>
+                            <li ng-class="{active: isActive('/dashboard')}" permission = "[perm.viewManagement]">
+                              <a href="/#/manageUser" class=" lipadding" ng-click="closeModal()">
+                              <i class="fa fa-outdent fa-lg"></i> Management</a></li>
+
+                            <li ng-class="{active: isActive('/OpsDashBoard')}" permission = "[perm.menuOpsDashBoard]">
+                              <a ng-href="/#/OpsDashBoard" class=" lipadding" ng-click="closeModal()">
+                                <i class="fa fa-dashboard fa-lg"></i> OpsDashBoard</a>
+                           </li>
+                          <li ng-class="{active: isActive('/CampaignList')}" permission = "[perm.menuCampaignList]">
+                              <a ng-href="/#/CampaignList" class=" lipadding" ng-click="closeModal()">
+                                <i class="fa fa-list fa-lg"></i> List Campaigns</a>
+                          </li>
+                          <li ng-class="{active: isActive('/campaignLeads')}" permission = "[perm.menuCampaignLeads]">
+                              <a ng-href="/#/campaignLeads" class=" lipadding" ng-click="closeModal()">
+                                <i class="fa fa-columns fa-lg"></i> Campaign Leads</a>
+                          </li>
+
+                          <li class="dropdown-list-parent" style="padding-left:10px">
+                            <div class="parent-list " ng-Click="toggleLeadsDropdown = !toggleLeadsDropdown" style="color:#fff">
+                              <i class="fa fa-cubes" aria-hidden="true" />
+                              Leads
+                              <i
+                                class="fa caret" aria-hidden="true"
+                              />
+                            </div>
+                            <ul class="dropdown-list-child" ng-show="toggleLeadsDropdown" style="padding-left:10px">
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                  <a ng-href="/#/campaignLeads">Leads</a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/leads/settings">Settings</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li ng-class="{active: isActive('/r/checklist/campaigns')}" permission = "[perm.menuChecklist]">
+                              <a ng-href="/r/checklist/campaigns" class=" lipadding" ng-click="closeModal()">
+                                <i class="fa fa-columns fa-lg"></i> Checklists</a>
+                          </li>
+                          <li class="dropdown-list-parent" style="padding-left:10px">
+                            <div class="parent-list" ng-Click="toggleEntitiesDropdown = !toggleEntitiesDropdown" style="color:#fff">
+                              <i class="fa fa-cubes" aria-hidden="true" />
+                              Suppliers
+                              <i
+                                class="fa caret" aria-hidden="true"
+                              />
+                            </div>
+                            <ul class="dropdown-list-child" ng-show="toggleEntitiesDropdown" style="padding-left:10px">
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/supplier/base-type/list">Standard Template</a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/supplier/type/list">Supplier Template</a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/supplier/list">Manage Supplier</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="dropdown-list-parent" style="padding-left:10px">
+                            <div class="parent-list" ng-Click="toggleInventoryDropdown = !toggleInventoryDropdown" style="color:#fff">
+                              <i class="fa fa-cubes" aria-hidden="true" />
+                              Inventory
+                              <i
+                                class="fa caret" aria-hidden="true"
+                              />
+                            </div>
+                            <ul class="dropdown-list-child" ng-show="toggleInventoryDropdown" style="padding-left:10px">
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                  <a ng-href="/r/inventory/base/list">Standard Template</a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/inventory/list">Inventory Template</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="dropdown-list-parent" style="padding-left:10px">
+                            <div class="parent-list" ng-Click="toggleBookingDropdown = !toggleBookingDropdown" style="color:#fff">
+                              <i class="fa fa-cubes" aria-hidden="true" />
+                              Booking Engine
+                              <i
+                                class="fa caret" aria-hidden="true"
+                              />
+                            </div>
+                            <ul class="dropdown-list-child" ng-show="toggleBookingDropdown" style="padding-left:10px">
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/booking/base/list">Standard Template </a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/booking/template/list">Booking Template</a>
+                              </li>
+                              <li>
+                                <i class="fa fa-columns" aria-hidden="true" style="color:#fff"/>
+                                <a ng-href="/r/booking/campaigns">Manage Booking</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li ng-class="{active: isActive('/dashboard')}" permission = "[perm.menuCampaignLeads]">
+                            <a href="https://forms.machadalo.com" target="_blank" class=" lipadding" ng-click="closeModal()">
+                              <i class="fa fa-sign-out fa-lg"></i> Supplier Forms
+                            </a>
+                          </li>
+                          <li ng-class="{active: isActive('/dashboard')}" permission = "[perm.menuCampaignLeads]">
+                            <a href="/#/loginLogs"  ng-click="closeModal()">
+                          <i class="fa fa-outdent"></i> View Logs</a></li>
+
+                          <!-- <li ng-class="{active: isActive('/dashboard')}" >
+                            <a data-target="#passwordModal" data-toggle="modal" ng-click="closeModal()">
+                          <i class="fa fa-columns fa-lg"></i> Change Password</a></li> -->
+
+                          <!-- <li ng-class="{active: isActive('/dashboard')}" >
+                            <a ng-click="changePassword()">
+                          <i class="fa fa-columns fa-lg"></i> Change Password</a></li> -->
+
+                          <li ng-class="{active: isActive('/dashboard')}" permission = "[perm.menuChangePassword]">
+                            <a href="/#/changePassword"  ng-click="closeModal()">
+                          <i class="fa fa-columns fa-lg"></i> Change Password</a></li>
+
+                          <li ng-class="{active: isActive('/dashboard')}">
+                            <a href="/#/logout" class=" lipadding" ng-click="closeModal()">
+                              <i class="fa fa-sign-out fa-lg"></i> Logout</a>
+                          </li>
+
+
+
+                      </ul>
+                </div>
+              </div>
+                <!-- <div class="col-sm-5">
+                    <div class="nav-side-menu">
+                        <div class="brand">Menu</div>
+                        <i class="fa fa-bars fa-2x toggle-btn"></i>
+                        <div class="menu-list">
+                            <ul id="menu-content" class="menu-content collapse out">
+                                <li ng-class="{active: isActive('/manageCampaign/create')}" permission = "[perm.menuHome]">
+                                  <a ng-href="/#/manageCampaign/create" class="lipadding" ng-click="closeModal()">
+                                    <i class="fa fa-tasks fa-lg"></i>Home</a>
+                                </li>
+                                <li ng-class="{active: isActive('/OpsDashBoard')}" permission = "[perm.menuOpsDashBoard]">
+                                  <a ng-href="/#/OpsDashBoard" class=" lipadding" ng-click="closeModal()">
+                                    <i class="fa fa-dashboard fa-lg"></i>OpsDashBoard</a>
+                               </li>
+                              <li ng-class="{active: isActive('/CampaignList')}" permission = "[perm.menuCampaignList]">
+                                  <a ng-href="/#/CampaignList" class=" lipadding" ng-click="closeModal()">
+                                    <i class="fa fa-dashboard fa-lg"></i>List Campaigns</a>
+                              </li>
+                              <li ng-class="{active: isActive('/campaignLeads')}">
+                                  <a ng-href="/#/campaignLeads" class=" lipadding" ng-click="closeModal()">
+                                    <i class="fa fa-dashboard fa-lg"></i>Campaign Leads</a>
+                              </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="modal change_password" id="passwordModal" >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                  <div class="modal-header">
+                      <h3>Change Password <span class="extra-title muted"></span></h3>
+                  </div>
+                  <form name="passwordForm">
+                  <div class="modal-body form-horizontal">
+                      <div class="form-group">
+                          <label for="new_password" class="col-md-4 control-label">New Password</label>
+                          <div class="col-md-5 controls">
+                              <input type="password" name="new_password" class="form-control" ng-model="userInfo.password">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="confirm_password" class="col-md-4 control-label">Confirm Password</label>
+                          <div class="col-md-5 controls">
+                              <input type="password" name="confirm_password" class="form-control" ng-model="userInfo.confirm_password" ng-change="checkPassword(userInfo.password,userInfo.confirm_password)">
+                              <span ng-if="!passwordValid && passwordForm.confirm_password.$dirty">{{passwordError}}</span>
+                          </div>
+                      </div>
+                  </div>
+                </form>
+                  <div class="modal-footer">
+                      <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                      <button href="#" class="btn btn-primary"  id="password_modal_save" ng-click="changePassword()" ng-disabled="!passwordValid">Save changes</button>
+                  </div>
+                </div>
+                </div>
+                </div>

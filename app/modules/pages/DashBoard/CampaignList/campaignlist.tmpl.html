@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="modules/pages/DashBoard/CampaignList/campaignlist.tmpl.css"/>
+<link rel="stylesheet" href="modules/common/loadingicon/loading-spinner.tmpl.css"/>
+
+<body>
+  <div ng-loading="loading"></div> <!--For displaying loading icon-->
+
+  <main ng-show="!isEmpty" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }" ng-if="loading">
+
+<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+<div><nav-bar></nav-bar></div>
+<br><br><br>
+<div class="panel1">
+  <!-- <div class="col2"> -->
+    <div class="" permission = "[]">
+      <div  ncy-breadcrumb></div>
+    <!-- </div> -->
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="panel">
+    <!-- <div class=""> -->
+
+  <div ng-show="isEmpty" style="text-align:center;"><h2>{{msg}}</h2></div>
+  <!-- Start: Displaying table of converted campaigns -->
+
+  <div class="pageTitle" style="margin-top:-15px">
+    <div class="panel-heading" style="height:70px;">
+      <h3>Campaign List</h3>
+    </div>
+  </div>
+    <div class="" ng-show="!isEmpty">
+  <!-- <input class="form-control input-size" type="text" ng-model="search" class="form-control spacing col-width"> -->
+
+      <!-- <input st-search="" placeholder="Search ..." class="form-control"  type="search"/> -->
+      <!-- <input type="text" class="form-control" placeholder="search" type="search"> -->
+
+      <!-- <div class=""> -->
+          <div class="campaignlisttable" style="margin:20px">
+            <div class="table-responsive">
+            <table class="table" st-table="campaignData" st-safe-src="Data" default-sort-reverse="true">
+              <input type="text" class="form-control" ng-model="searchQuery" placeholder="search" type="search">
+              <br>
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Sr No</th>
+                  <th style="text-align: center;">Campaign Name</th>
+                  <th style="text-align: center;">Assigned To</th>
+                  <th style="text-align: center;">Assigned By</th>
+                  <th st-sort="updated_at" st-skip-natural="true" style="text-align: center;">Assigned Date</th>
+                  <th st-sort="campaign.tentative_start_date" st-skip-natural="true" style="text-align: center;">Start Date</th>
+                  <th st-sort="campaign.tentative_end_date" st-skip-natural="true" style="text-align: center;">End Date</th>
+                  <th style="text-align: center;">Campaign Status</th>
+                  <th style="text-align: center;">Booking Plan</th>
+                  <th style="text-align: center;">Release Plan</th>
+                  <th style="text-align: center;">Executed Image</th>
+                  <th style="text-align: center;">Download Campaign</th>
+                  <th style="text-align: center;">Email</th>
+                </tr>
+                <tr colspan="9">
+                  <td></td>
+                  <td><input ng-model="f.campaign.name" class="form-control" placeholder="Search"><hr></td>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                  <tr st-select-row='proposal' style="text-align: center;"  dir-paginate="proposal in campaignData|filter:f|filter:searchQuery|itemsPerPage:10">
+
+                  <!-- <td class="col-md-1">{{proposal.campaign.proposal_id}}</td> -->
+                  <td class="col-md-2">{{$index + 1}}</td>
+                  <td class="col-md-2">{{proposal.campaign.name}}</td>
+                  <td class="col-md-2">{{proposal.assigned_to.first_name||proposal.assigned_to.username}}</td>
+                  <td class="col-md-2">{{proposal.assigned_by.first_name||proposal.assigned_by.username}}</td>
+                  <td class="col-md-2">{{proposal.updated_at|limitTo:10 }}</td>
+                  <td class="col-md-2">{{proposal.campaign.tentative_start_date|limitTo:10}}</td>
+                  <td class="col-md-3">{{proposal.campaign.tentative_end_date|limitTo:10}}</td>
+                  <td class="col-md-3 campaignStatus" style="text-transform:lowercase">{{proposal.campaign.status}}</td>
+                  <td class="col-md-2">
+                    <a ng-click="getDetails(proposal.campaign.proposal_id)"> Details </a>
+                  </td>
+                  <td class="col-md-2">
+                    <a ng-click="goToAssignDatesPage(proposal.campaign.proposal_id)"> Assign Dates</a>
+                  </td>
+                  <td class="col-md-2">
+                    <a ng-click="getExecutionDetails(proposal.campaign)"> Image Details </a>
+                  </td>
+                  <td class="col-md-2">
+                    <a ng-click="downloadSheet(proposal.campaign.proposal_id)"> Download </a>
+                  </td>
+                  <td class="col-md-2">
+                    <p data-toggle="modal" data-target="#sendEmailModal" ng-click="getProposalDetails(proposal.campaign)" style="color: #337ab7;cursor: pointer;">Send Email</p>
+                    <!--Open email model    -->
+                    <div id="sendEmailModal" class="modal fade">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Send Emails for {{ proposalDetail.name }}</h4>
+                            <hr/>
+                            <div class = "modal-body">
+                              <div class="col-md-4">Select Email Type :</div>
+                              <div class="col-md-8">
+                                <select class="form-control" name="" ng-model="emailModel.selected">
+                                  <option value="" disabled selected hidden>Email Type</option>
+                                  <option value="listOfSupplier">List Of Society Email</option>
+                                  <option value="activationOfSupplier">Activation Of Society,Branding and Permission Email</option>
+                                  <option value="pipelineOfSupplier">Pipelined Societies Email</option>
+                                  <option value="prehype">Prehype Email</option>
+                                  <option value="recce">Recce Email</option>
+                                </select>
+                              </div>
+                              <br><br><br>
+                              <div class="row email-row">
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <input type="email" class="form-control"  placeholder="Enter Email Id to send mail" ng-model="emailModel.email" style="text-align:center;"><br>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <button type="button" name="button" ng-Click="sendBookingEmails(proposalDetail.proposal_id)" class="btn email-button" ng-disabled="isEmailButton || emailBtnDisabled">Send email to given user</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="emailModal" style="display: grid;">
+                                  <button type="button" name="button" class="btn btn-danger" style="text-align:center" ng-click="sendBookingEmails(proposalDetail.proposal_id, 'confirmed')" ng-disabled="emailBtnDisabled"> Send Email To All</button>
+                                </div>
+                              </div>
+
+                              </br>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="10" class="text-center">
+                    <dir-pagination-controls
+                       max-size="5"
+                       direction-links="true"
+                       boundary-links="true" >
+                   </dir-pagination-controls>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          </div>
+      <!-- </div> -->
+    </div>
+
+
+   <!-- <footer-bar></footer-bar>   -->
+   </div>
+  </div>
+</main>
+</body>

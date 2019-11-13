@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="/modules/pages/enterLeads/enterLeads.tmpl.css">
+<link rel="stylesheet" href="modules/common/loadingicon/loading-spinner.tmpl.css"/>
+
+<div ng-loading="loading"></div> <!--For displaying loading icon-->
+<div ng-show="isEmpty" style="text-align:center;"><h2>{{msg}}</h2></div>
+<div><nav-bar></nav-bar></div>
+
+<!-- <main ng-show="!isEmpty" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }" ng-if="loading"> -->
+<br/><br/><br/>
+<div class="panel" style="margin-top:20px">
+  <div class="row">
+    <div class="pageTitle">
+      <h3>Leads</h3>
+      Name of Society : {{supplierData.name}}<br/>
+      Area : {{supplierData.area}}<br/>
+      Subarea : {{supplierData.subarea}}
+    </div>
+    <div class="row" style="margin:2%;">
+      <button class="btn btn-danger" ng-click="getLeadsBySupplier()" ng-if="!viewLeads">View Leads</button>
+      <button class="btn btn-danger" ng-click="changeView()" ng-if="viewLeads">Back</button>
+    </div>
+    <input type="text" class="form-control" ng-model="searchSupplier" placeholder="search" ng-if="viewLeads">
+      <form name="leadForm"  style="margin:5%;" ng-if="!viewLeads">
+      <div class="" ng-repeat="item in leadModelData">
+        <div class="form-group" style="padding-bottom:0;padding-top:0;">
+          <div class="cols-sm-10" ng-if="(item.key_type != 'RADIO' && item.key_type != 'CHECKBOX' && item.key_type != 'DROPDOWN' && item.key_type != 'EMAIL' && item.key_type != 'PHONE' && item.key_type != 'TEXTAREA' && !item.hot_lead_criteria) ||
+                                (item.key_type != 'RADIO' && item.key_type != 'CHECKBOX' && item.key_type != 'DROPDOWN' && item.key_type != 'EMAIL' && item.key_type != 'PHONE' && item.key_type != 'TEXTAREA' && item.hot_lead_criteria)">
+            {{item.key_name}}
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input autocomplete type="{{keyTypesMap[item.key_type]}}" class="form-control" ng-model="item.value" />
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="padding-bottom:0;padding-top:0;">
+          <div class="cols-sm-10" ng-if="item.key_type == 'PHONE'">
+            {{item.key_name}}
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" name="contact_phone"  class="form-control" ng-pattern="/^(\d{10})$/" ng-model="item.value"/>
+               <span class="show-error" ng-show="leadForm.contact_phone.$error.pattern">Please Enter Valid 10 Digit Mobile Number</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="padding-bottom:0;padding-top:0;" ng-class="{ 'has-error' : leadForm.email.$invalid && !leadForm.email.$pristine }">
+          <div class="cols-sm-10" ng-if="item.key_type == 'EMAIL'">
+            {{item.key_name}}
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="email" name="contact_email" id="contact_email" class="form-control" ng-model="item.value"  />
+              <span class="show-error" ng-show="leadForm.contact_email.$error.email">Please Enter Valid Email</span></div>
+
+            </div>
+          </div>
+          <div class="form-group" style="padding-bottom:0;padding-top:0;">
+            <div class="cols-sm-10" ng-if="item.key_type == 'TEXTAREA'">
+              {{item.key_name}}
+              <div class="input-group">
+                <textarea style="width:100%;" class="form-control" rows="5" id="comment" ng-model="item.value"></textarea>
+                <!-- <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="{{keyTypesMap[item.key_type]}}" class="form-control" ng-model="item.value"/> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="padding-bottom:0;padding-top:0;">
+            <div class="cols-sm-10" ng-if="(item.key_type == 'RADIO' && !item.hot_lead_criteria)
+                        || (item.key_type == 'RADIO' && item.hot_lead_criteria)">
+              {{item.key_name}}
+              <div class="input-group" ng-repeat="option in item.key_options">
+                <!-- <span class="form-check-input"></span> -->
+                <input type="{{keyTypesMap[item.key_type]}}" class="form-check-input" value="{{option}}" name="radio" ng-model="item.value"/>{{option}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="padding-bottom:0;padding-top:0;">
+            <div class="cols-sm-10" ng-if="(item.key_type == 'CHECKBOX' && !item.hot_lead_criteria)
+                    || (item.key_type == 'CHECKBOX' && item.hot_lead_criteria)"
+                    ng-init="getCheckBoxValues(item.key_options)">
+              {{item.key_name}}
+              <div class="input-group" ng-repeat="option in leadChBoxKeyOptions">
+                <input type="checkbox" class="form-check-input"  value="{{option}}"  name="chbox" ng-model="option.selected"  ng-click="setCheckBoxValue(option.selected,$index,item)"/>{{option.name}}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="padding-bottom:0;padding-top:0;" ng-if="(item.key_type == 'DROPDOWN' && !item.hot_lead_criteria) ||
+                              (item.key_type == 'DROPDOWN' && item.hot_lead_criteria)">
+              <span ng-if="item.key_type == 'DROPDOWN'">{{item.key_name}}</span>
+              <select ng-if="item.key_type == 'DROPDOWN'" class="form-control" ng-model="item.value">
+                <option ng-repeat="option in item.key_options" value="{{option}}">{{option}}</option>
+              </select>
+          </div>
+      </div>
+      <div class="form-group">
+        <button ng-if="!editLeads" class="btn btn-danger" ng-disabled="leadForm.$invalid" ng-click="saveLeads()">Submit</button>
+        <button ng-if="editLeads" class="btn btn-danger" ng-disabled="leadForm.$invalid" ng-click="updateLeadDetails()">Update</button>
+
+      </div>
+  </form>
+
+  </div>
+
+<div class="leadsdetailtable" ng-if="viewLeads">
+  <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+              <th ng-repeat="header in leadsData.headers">{{header.key_name}}</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="alias in leadsData.values | filter : searchSupplier">
+            <td ng-repeat="lead in alias">{{lead.value}}</td>
+            <td><button class="btn btn-danger" ng-click="getEditLeads(alias[0].value)">Edit</button></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- </main> -->
